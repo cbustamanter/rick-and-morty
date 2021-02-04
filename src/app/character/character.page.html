@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="character">
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-md="1" size-md="9">
+        <ion-card>
+          <div class="char-image">
+            <img src="{{character.image}}" />
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle [color]="character.status.toLowerCase() === 'alive' ? 'success' : 'danger' ">
+              Status: {{character.status}}
+            </ion-card-subtitle>
+            <ion-card-title>{{character.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Origin: {{character.origin.name}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
